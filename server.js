@@ -63,6 +63,9 @@ app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 // const upload = multer({ storage });
 
+app.use("/", (req, res) => {
+  res.send("Welcome to Purplespace endppoint");
+});
 app.use("/api/upload", upload.single("image"), async (req, res) => {
   try {
     // Upload image to cloudinary
