@@ -73,6 +73,10 @@ app.use("/api/upload", upload.single("image"), async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 //routes
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
@@ -81,6 +85,9 @@ app.use("/api/messages", messageRoute);
 app.use("/api/conversations", conversationRoute);
 app.use("/", (req, res) => {
   res.send("Welcome to Purplespace endppoint");
+});
+app.use("*", (req, res) => {
+  res.send("404 Page Cannot Be Found");
 });
 
 //socket
