@@ -7,7 +7,7 @@ dotenv.config();
 //MongoDb
 export default function MongoDb() {
   mongoose
-    .connect(process.env.DB_URl, {
+    .connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
       useFindAndModify: false,
       useUnifiedTopology: true,
