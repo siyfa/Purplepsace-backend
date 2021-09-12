@@ -79,9 +79,9 @@ app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/conversations", conversationRoute);
-// app.use("/", (req, res) => {
-//   res.send("Welcome to Purplespace endppoint");
-// });
+app.use("/", (req, res) => {
+  res.send("Welcome to Purplespace endppoint");
+});
 
 //socket
 
