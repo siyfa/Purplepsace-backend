@@ -1,4 +1,8 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+//env
+dotenv.config();
 
 //MongoDb
 export default function MongoDb() {
