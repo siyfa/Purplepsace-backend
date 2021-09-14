@@ -186,7 +186,7 @@ router.post("/:postId/comments", async (req, res) => {
         await newComment.save();
         await post.comments.push(newComment);
         await post.save();
-        res.status(201).json("Your comment is succesfully posted");
+        res.status(201).json(newComment);
       } else {
         res.status(404).json("Post not found.");
       }
